@@ -1,5 +1,6 @@
 # Secure-Software-Architecture-and-Design-Patterns-in-Java-EE-Part-1
 Secure Software Architecture and Design Patterns in Java EE Part-1, by EC-Council
+
 Please use the follwoing code projects for Section 3 of this course:
   - supermarket-war
   - daily-loalty-points
