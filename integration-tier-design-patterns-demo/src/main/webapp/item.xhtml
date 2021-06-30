@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Item</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>
+                <h:outputText value="Item"/>
+            </h2>
+            <h:outputText value="Code "/>
+            <p/>
+            <h:inputText id="code" value="#{pizzaBean.code}"/>
+            <p/>
+            <h:outputText value="Category "/>
+            <p/>
+            <h:inputText id="category" value="#{pizzaBean.category}"/>
+            <p/>
+            <h:outputText value="Name "/>
+            <p/>
+            <h:inputText id="name" value="#{pizzaBean.name}"/>
+            <p/>
+            <h:outputText value="Topping "/>
+            <p/>
+            <h:inputText id="topping" value="#{pizzaBean.topping}"/>
+            <p/>
+            <h:outputText value="Size "/>
+            <p/>
+            <h:inputText id="size" value="#{pizzaBean.size}"/>
+            <p/>
+            <h:outputText value="Price "/>
+            <p/>
+            <h:inputText id="price" value="#{pizzaBean.price}"/>
+            <p/>
+            <h:commandButton value="Submit" 
+                             action="#{pizzaBean.processResults}"/>
+            <p/>
+            <h:commandButton id="Home" value="Home" action="#{pizzaBean.reset}"/>
+        </h:form>
+       
+    </h:body>
+</html>
+
