@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>All Items</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value = "#{pizzaBean.allItems}" var = "item">
+            
+            <h:column>    				
+               <f:facet name = "header">Code</f:facet>    				
+               <h:inputText value = "#{item.code}"
+                  size = "10" rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.code}"
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Category</f:facet>
+               <h:inputText value = "#{item.category}" 
+                  size = "20" rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.category}" 
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Name</f:facet>
+               <h:inputText value = "#{item.name}" size = "5"
+                  rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.name}" 
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Topping</f:facet>
+               <h:inputText value = "#{item.topping}" 
+                  size = "5" rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.topping}" 
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+            
+            <h:column>
+               <f:facet name = "header">Size</f:facet>
+               <h:inputText value = "#{item.size}" 
+                  size = "5" rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.size}" 
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+                
+            <h:column>
+               <f:facet name = "header">Price</f:facet>
+               <h:inputText value = "#{item.price}" 
+                  size = "5" rendered = "#{item.canEdit}" />
+               <h:outputText value = "#{item.price}" 
+                  rendered = "#{not item.canEdit}" />
+            </h:column>
+            <h:column>
+               <f:facet name = "header">Edit</f:facet>
+               <h:commandButton value = "Edit" 
+                  action = "#{pizzaBean.editItem(item)}" 
+                  rendered = "#{item.canEdit}"/>        
+            </h:column>
+            <h:column>
+               <f:facet name = "header">Delete</f:facet>
+               <h:commandButton value = "Delete" 
+                  action = "#{pizzaBean.deleteItem(item)}"  />                
+            </h:column>
+            
+         </h:dataTable>  
+         
+         <h:commandButton id="Home" value="Home" action="#{pizzaBean.reset}"/>
+         	  
+      </h:form>
+        
+    </h:body>
+</html>
+
